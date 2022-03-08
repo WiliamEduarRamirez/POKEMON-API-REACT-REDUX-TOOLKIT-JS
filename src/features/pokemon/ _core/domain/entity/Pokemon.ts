@@ -15,6 +15,18 @@ export interface Pokemon {
   name: string;
   base_experience: number;
   sprites: Sprite;
+  type: string;
+  types: TypePayload[];
+}
+
+export interface TypePayload {
+  slot: number;
+  type: Type;
+}
+
+export interface Type {
+  name: string;
+  url: string;
 }
 
 export interface Sprite {

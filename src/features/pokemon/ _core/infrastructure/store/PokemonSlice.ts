@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { listPokemonsAsync } from './PokemonThunks';
+import { Pokemon } from '../../domain/entity/Pokemon';
 export interface PokemonState {
-  pokemons: any[];
+  pokemons: Pokemon[];
   isLoading: boolean;
 }
 
@@ -20,7 +21,7 @@ export const pokemonSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(listPokemonsAsync.fulfilled, (state, action) => {
-        console.log(action.payload);
+        state.pokemons = action.payload;
         state.isLoading = false;
       })
       .addCase(listPokemonsAsync.rejected, (state, action) => {
