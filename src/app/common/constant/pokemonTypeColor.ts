@@ -1,9 +1,9 @@
 export const POKEMON_TYPE_COLOR = {
-  normal: '#A8A77A',
-  fire: '#EE8130',
-  water: '#6390F0',
+  normal: 'rgba(168,167,122,0.8)',
+  fire: 'rgba(238,129,48,0.8)',
+  water: 'rgba(99,144,240,0.8)',
   electric: '#F7D02C',
-  grass: '#7AC74C',
+  grass: 'rgba(122,199,76,0.8)',
   ice: '#96D9D6',
   fighting: '#C22E28',
   poison: '#A33EA1',
