@@ -1,7 +1,7 @@
-import Pokemon from './features/pokemon/containers/Pokemon';
+import Routes from './app/routes';
 
 function App() {
-  return <Pokemon />;
+  return <Routes />;
 }
 
 export default App;
