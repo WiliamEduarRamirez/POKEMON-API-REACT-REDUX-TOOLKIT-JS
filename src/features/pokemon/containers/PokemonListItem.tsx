@@ -43,16 +43,21 @@ const PokemonListItem = ({ pokemon }: PokemonListItemProps) => {
         <Typography component={'span'} variant={'body2'}>
           <DivChip>
             {pokemon.types.map(tempType => (
-              <Chip key={tempType.type.name} label={tempType.type.name} color={'secondary'} />
+              <Chip
+                size={'medium'}
+                key={tempType.type.name}
+                label={tempType.type.name}
+                color={'secondary'}
+              />
             ))}
           </DivChip>
         </Typography>
       </CardContent>
       <CardActions style={{ display: 'block', textAlign: 'center' }}>
-        <Button size='small' variant={'contained'} color={'primary'}>
+        <Button variant={'contained'} color={'primary'}>
           View
         </Button>
-        <Button size='small' variant={'outlined'} color={'error'}>
+        <Button variant={'contained'} color={'error'}>
           Edit
         </Button>
       </CardActions>

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { listPokemonsAsync } from '../ _core/infrastructure/store/PokemonThunks';
 import { CircularProgress } from '@mui/material';
@@ -16,32 +15,31 @@ export default function PokemonList() {
 
   return (
     <>
-      <Container sx={{ py: 8 }} maxWidth='md'>
-        <Grid container spacing={4}>
-          {!isLoading && (
-            <Fragment>
-              {pokemons.map((tempPokemon, index) => (
-                <Grid item key={index} xs={12} sm={6} md={4}>
-                  <PokemonListItem pokemon={tempPokemon} />
-                </Grid>
-              ))}
-            </Fragment>
-          )}
-          {isLoading && (
-            <Grid
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-              item
-              xs={12}
-            >
-              <CircularProgress />
-            </Grid>
-          )}
-        </Grid>
-      </Container>
+      <Grid container spacing={4}>
+        {!isLoading && (
+          <Fragment>
+            {pokemons.map((tempPokemon, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4}>
+                <PokemonListItem pokemon={tempPokemon} />
+              </Grid>
+            ))}
+          </Fragment>
+        )}
+        {isLoading && (
+          <Grid
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '50vh'
+            }}
+            item
+            xs={12}
+          >
+            <CircularProgress />
+          </Grid>
+        )}
+      </Grid>
     </>
   );
 }
